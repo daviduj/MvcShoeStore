@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e6126d20-32f0-45e4-b1e3-3e9f54618555" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57074/ShoesStoreService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ShoesStoreBasicService.wsdl" MetadataType="Wsdl" ID="942ee8b2-9152-430b-937d-a269f0dded2e" SourceId="1" SourceUrl="http://localhost:57074/ShoesStoreService.svc?wsdl" />
+    <MetadataFile FileName="ShoesStoreService.xsd" MetadataType="Schema" ID="12ec7756-8b4c-43c5-8fee-1babfe2887a3" SourceId="1" SourceUrl="http://localhost:57074/ShoesStoreService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ShoesStoreService.disco" MetadataType="Disco" ID="86bf06c1-1124-41a4-9cd5-553b59e71dac" SourceId="1" SourceUrl="http://localhost:57074/ShoesStoreService.svc?disco" />
+    <MetadataFile FileName="ShoesStoreService1.xsd" MetadataType="Schema" ID="8d07074e-d66e-4fde-a51c-5056f2d0f2ea" SourceId="1" SourceUrl="http://localhost:57074/ShoesStoreService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ShoesStoreService2.xsd" MetadataType="Schema" ID="47b37e72-c7ba-4f94-bc42-2f5287957713" SourceId="1" SourceUrl="http://localhost:57074/ShoesStoreService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

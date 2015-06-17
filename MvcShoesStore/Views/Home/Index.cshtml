@@ -1,0 +1,96 @@
+﻿@using MvcShoesStore.Extensions;
+@{
+    ViewBag.Title = "Search Page";
+    Cassette.Views.Bundles.Reference("~/Scripts/compiled/Search/", "require");
+
+}
+
+@Html.RegisterRequireModule("Search")
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Search Page</h2>
+        <div class="tabs">
+            <ul class="tab-bar inline">
+
+                <li><a href="#" data-view="#tab-1" class="selected">List All Stores</a></li>
+                <li><a href="#" data-view="#tab-2">List All Articles</a></li>
+                <li><a href="#" data-view="#tab-3">List Articles by Store Id</a></li>
+            </ul>
+
+            <div class="tab-bar-bottom"></div>
+            <div id="tab-1" class="tab-container" style="display:block">
+                <!-- ko with: allStoresTab() -->
+                <div class="box">
+                    <div class="load-report-grid" data-bind="kendoGrid: { data: allStoresList, rowTemplate: 'mainReportsRowTmpl', useKOTemplates: true, selectable: false, widget: allStoresListWidget, columns: allStoresListColumns,  sortable: true, useKOTemplates: true, groupable: true,pageable: true, filterable: true }"></div>
+                </div>
+                <!-- /ko -->
+            </div>
+            <div id="tab-2" class="tab-container">
+                <!-- ko with: allArticlesTab() -->
+                <div class="box">
+                    <div class="load-report-grid" data-bind="kendoGrid: { data: allArticlesList, rowTemplate: 'allArticlesReportsRowTmpl', useKOTemplates: true, selectable: false, widget: allArticlesListWidget, columns: allArticlesListColumns,  sortable: true, useKOTemplates: true, groupable: true,pageable: true, filterable: true }"></div>
+                </div>
+                <!-- /ko -->
+            </div>
+            <div id="tab-3" class="tab-container">
+                <div>
+                    <h2>Search Id</h2>
+                    <input data-bind='value: inputValueSearch, valueUpdate: "afterkeydown"' style="height:20px; width: 200px; " />
+                    <button data-bind="click: searchStore , enable: inputValueSearch().length > 0">Search</button>
+
+                </div>
+                <br>
+                <!-- ko with: allArticlesByStoreTab() -->
+                <div class="box">
+                    <div class="load-report-grid" data-bind="kendoGrid: { data: allArticlesListByStore, rowTemplate: 'allArticlesReportsRowTmpl', useKOTemplates: true, selectable: false, widget: allArticlesListByStoreWidget, columns: allArticlesListColumns,  sortable: true, useKOTemplates: true, groupable: true,pageable: true, filterable: true }"></div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--knockout scripts-->
+<script id="mainReportsRowTmpl" type="text/html">
+    <tr>
+        <td>
+            <a data-bind="text: StoreId"> </a>
+        </td>
+        <td>
+            <div data-bind="text: StoreName" class="blue16 item38 staticTooltip" />
+        </td>
+        <td class="n-centered">
+            <span data-bind="text: StoreAddress"></span>
+        </td>
+        <td>
+            <span data-bind="text: StoreDescription"></span>
+        </td>
+    </tr>
+</script>
+
+<script id="allArticlesReportsRowTmpl" type="text/html">
+    <tr>
+        <td>
+            <a data-bind="text: ArticleId"> </a>
+        </td>
+        <td>
+            <div data-bind="text: ArticleName" class="blue16 item38 staticTooltip" />
+        </td>
+        <td class="n-centered">
+            <span data-bind="text: ArticleDescription"></span>
+        </td>
+        <td>
+            <span data-bind="text: ArticlePrice"></span>
+        </td>
+        <td>
+            <span data-bind="text: ArticleStoreName"></span>
+        </td>
+        <td>
+            <span data-bind="text: ArticleTotalShelf"></span>
+        </td>
+        <td>
+            <span data-bind="text: ArticleTotalVault"></span>
+        </td>
+    </tr>
+</script>
